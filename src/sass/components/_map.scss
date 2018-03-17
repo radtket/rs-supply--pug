@@ -1,0 +1,282 @@
+
+//colors
+$color_cape_cod_approx: #404040;
+$black_25: rgba(0, 0, 0, 0.25);
+$color_woodsmoke_approx: #101010;
+$white: #fff;
+$color_gallery_approx: #eee;
+$color_salem_approx: #00853e;
+$color_atlantis_approx: #8cc63f;
+$color_desert_storm_approx: #f8f8f8;
+$black_10: rgba(0, 0, 0, 0.1);
+
+.pad2 {
+	padding: 20px;
+}
+
+
+.sidebar {
+	background-color: $color-white;
+	color: #101010;
+	border-right: 1px solid $black_25;
+	@media (min-width: 767px) {
+		float: left;
+    width: 350px;
+    overflow-y: scroll;
+    height: calc(100vh - 91px);
+	}
+	header {
+		border-bottom: 1px solid #e7e7e7;
+		min-height: 60px;
+		line-height: 60px;
+		background-color: #20325a;
+		color: #fff;
+		font-weight: 700;
+		padding-right: $small-spacing;
+		padding-left: $small-spacing;
+		font-size: $base-spacing;
+	}
+}
+
+.map-wrap {
+	.map {
+		height: 50vh;
+		width: 100%;
+	}
+	@media (min-width: 767px) {
+    float: right;
+    width: calc(100% - 350px);
+    .map {
+      height: calc(100vh - 91px);
+    }
+	}
+}
+
+
+.listings {
+	height: 100%;
+	overflow: auto;
+	padding-bottom: 60px;
+	.item {
+		display: block;
+		border-bottom: 1px solid #e7e7e7;
+		padding: 0.5rem $small-spacing;
+		&:last-child {
+			border-bottom: none;
+		}
+		&.active {
+			background-color: #f8f8f8;
+			.title {
+				color: #b33839;
+			}
+		}
+		.title {
+			display: block;
+			color: #ef4b4c;
+			font-weight: 500;
+			font-size: 20px;
+			margin-bottom: 0.375rem;
+			&:hover {
+				color: #b33839;
+			}
+		}
+		.details {
+			font-size: 14px;
+			li {
+				line-height: 1.2;
+				margin-bottom: 0.375rem;
+				margin-right: 0.75rem;
+				&:last-child {
+					margin-right: 0;
+				}
+				span {
+					height: 14px;
+					width: 1rem;
+					display: inline-block;
+					margin-right: 4px;
+					svg {
+						fill: #20325a;
+						height: 14px;
+						max-width: 100%;
+						max-height: 100%;
+					}
+				}
+			}
+		}
+	}
+}
+
+::-webkit-scrollbar {
+	width: 3px;
+	height: 3px;
+	border-left: 0;
+	background: $black_10;
+}
+
+::-webkit-scrollbar-track {
+	background: none;
+}
+
+::-webkit-scrollbar-thumb {
+	background: $color_salem_approx;
+	border-radius: 0;
+}
+
+.marker {
+	border: none;
+	cursor: pointer;
+	height: 56px;
+	width: 56px;
+	background-image: url(../img/marker.png);
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.clearfix {
+	display: block;
+	&:after {
+		content: '.';
+		display: block;
+		height: 0;
+		clear: both;
+		visibility: hidden;
+	}
+}
+
+::-webkit-scrollbar {
+  border-left: 0;
+	background: rgba(0, 0, 0, 0.1);
+	@include size(3px);
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-blue-l;
+  border-radius: 0;
+}
+
+.marker {
+  border: none;
+  cursor: pointer;
+	@include size(56px);
+  background-image: url(../img/marker.png);
+}
+
+.mapboxgl-popup {
+	padding-bottom: $base-spacing * 2;
+	color: $base-font-color;
+
+  &-content {
+    padding: 0 !important;
+    border-radius: $small-spacing / 2 !important;
+    font-size: 14px;
+
+    h3 {
+      margin: 0;
+      display: block;
+      text-align: center;
+      padding: $small-spacing $base-spacing;
+      font-weight: 700;
+      background-color: $color-blue-d;
+      color: $color-white;
+      border-top-left-radius: $small-spacing / 2;
+      border-top-right-radius: $small-spacing / 2;
+      font-size: 20px;
+    }
+
+    button {
+      padding: 0;
+      border: 1px solid $color-blue;
+      border-radius: 50%;
+      font-size: 16px;
+      line-height: 16px / 2;
+      display: inline;
+      right: -$small-spacing;
+      top: -$small-spacing;
+      background-color: $color-red-l;
+      color: $color-white;
+      @include size($base-spacing);
+
+      &:hover {
+        background-color: $color-red-d;
+      }
+    }
+
+    ul {
+      padding: $small-spacing;
+
+      svg {
+        height: 0.75rem;
+        margin-right: 0.375rem;
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      li {
+        margin-bottom: 8px;
+        line-height: 1.2;
+      }
+
+      .icon-list {
+        margin-left: $base-spacing;
+        height: 1rem;
+
+        &:before {
+          content: "";
+					@include size(1rem);
+          display: block;
+          float: left;
+          line-height: 1rem;
+          margin-left: -$base-spacing;
+          vertical-align: middle;
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 90%;
+        }
+
+        &.icon-list-phone::before {
+          background-image: url('icon-phone__red.svg');
+        }
+
+        &.icon-list-fax::before {
+          background-image: url('icon-fax__red.svg');
+        }
+      }
+    }
+  }
+}
+
+.mapboxgl-popup-anchor-top {
+  margin-top: 30px;
+
+  > .mapboxgl-popup-tip {
+    border-bottom-color: $color-blue-d !important;
+  }
+}
+
+
+
+
+.mapboxgl-popup-content-wrapper {
+	padding: 1%;
+}
+
+.mapboxgl-ctrl-geocoder {
+	border: 2px solid $color_salem_approx;
+	border-radius: 0;
+	position: relative;
+	top: 0;
+	width: 800px;
+	margin-top: 0;
+	border: 0;
+	>div {
+		min-width: 100%;
+		margin-left: 0;
+	}
+}
+
+.mapboxgl-container .leaflet-marker-icon {
+	cursor: pointer;
+}

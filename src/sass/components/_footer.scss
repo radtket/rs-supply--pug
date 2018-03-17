@@ -1,0 +1,43 @@
+.footer {
+	border-bottom: $small-spacing solid $color-red;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	> svg {
+		margin-top: 70px;
+		fill: $color-blue;
+	}
+	.small-section {
+		padding-top: 0;
+		background-color: $color-blue;
+	}
+	figure {
+		height: 70px;
+		svg {
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	.footer-company-name {
+		color: $medium-gray;
+		font-size: 12px;
+		margin: 0;
+	}
+	.footer-links {
+		@include padding($base-spacing null $small-spacing);
+		a {
+			font-size: 14px;
+			font-weight: 500;
+			display: inline-block;
+			color: $color-white;
+			margin-right: $base-spacing;
+			&:last-child {
+				margin-right: 0;
+			}
+			&:hover,
+			&.active {
+				color: $color-red-l;
+			}
+		}
+	}
+}

@@ -1,10 +1,123 @@
 extends _layouts/home
 
 block head_end
-	link(rel="stylesheet" href="/css/style.css") 
+	link(rel="stylesheet" href="/css/style.css")
 
 block content
-	include _partials/header
+	header.small-section.intro-hero
+		.intro-section
+			h2
+				small R&S SUPPLY
+				| Your Full Service Roofing
+				br
+				span &
+				|  Building Materials Supplier
+
+
+	section.intro-section.intro-section__bg
+		.intro-section__content
+			aside
+				.our-info
+					.our-info__wrap
+						img(alt='', src='http://localhost:8000/static/logo_40years.66160821.png')
+					h2
+						| Over 40 Years of
+						br
+						| 					Experience
+					p
+						| Helping people find the
+						br
+						| best solutions.
+			article
+				h2.title Our Journey
+				p
+					| R & S Supply is a wholesale supplier of building supplies catering to the professional contractor. Started in 1977 by Alan Shufelberger the chain began with their first store in Redding, CA. In 1983, the first store in the chain was added in Sacramento, CA. With that addition, the name was changed to R&S Supply to recognize Redding and Sacramento. That name has been used for all the additional stores in the chain since then.
+				p
+					| In 1991 a store was added in Eureka, CA with the Grover Beach, CA location being added the following year in 1992. In 1995, two stores were added in Medford, OR and Reno, NV, bringing the total stores to five. In 1998 two additional stores were added in Boise, ID and Twin Falls, ID. Beginning in 2000 a new store was added each year, Castroville, CA – 2000, Fresno, CA – 2001, Billings, MT – 2002, Idaho Falls, ID – 2003, Missoula, MT – 2004, and Chico, CA in 2005. After a 5 Year hiatus from growth, R&S Supply added a new store in Bozeman, MT in 2010.
+				p
+					| When Malarkey Roofing Products built a new plant in Oklahoma City, R&S Supply opened stores in Oklahoma City and Tulsa, OK in 2012 to support their expansion efforts. In 2014 an additional store was added in Wichita Falls, TX to support this effort, as well as additional stores in Las Vegas, NV and Lake Havasu City, AZ in 2014 as well. 2016 brought 4 additional stores in Kingman & Flagstaff, AZ, Decatur, TX and Elko, NV. A location in Great Falls, MT was added in 2017 making it the newest store in the chain. Additional store openings are planned for 2018.
+				p
+					| Mr. Shufelberger and his team have grown their business with a focus on the fundamentals, and maintaining the principals that “Customer Service Still Matters”. The company focuses on supplying building materials to the professional contractor. The main area of focus for each store is the wholesale roofing supply. Most stores add other building materials into their mix such as drywall, stucco, cement products, lumber, etc. Most deliveries are made to the jobsite, but there is a small segment of “cash and carry” business in each store.
+				p
+					| With the constant consolidation in the roofing supply industry over the past 10 years, R&S Supply has remained focused on their core principals of “Customer Service Still Matters”, while their competitors focus on the Wal-Mart approach for the supply business. The company is wholly owned by Mr. Shufelberger, and the corporate headquarters are in Redding, California where Mr. Shufelberger resides.
+
+	section.stores-section
+		.container
+			.stores-section__content.page-section
+				.tabs-wrapper
+					ul.tabs.clearfix(data-tabgroup='first-tab-group')
+						li
+							a.active(href='#tab1')
+								span.city-full Arizona
+								span.city-abrv AZ
+						li
+							a(href='#tab2')
+								span.city-full California
+								span.city-abrv CA
+						li
+							a(href='#tab3')
+								span.city-full Idaho
+								span.city-abrv ID
+						li
+							a(href='#tab4')
+								span.city-full Montana
+								span.city-abrv MT
+						li
+							a(href='#tab5')
+								span.city-full Nevada
+								span.city-abrv NV
+						li
+							a(href='#tab6')
+								span.city-full Oklahoma
+								span.city-abrv OK
+						li
+							a(href='#tab7')
+								span.city-full Oregon
+								span.city-abrv OR
+						li
+							a(href='#tab8')
+								span.city-full Texas
+								span.city-abrv TX
+					section#first-tab-group.tabgroup
+						#tab1
+							h2 Heading 1
+							p
+								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla deserunt consectetur ratione id tempore laborum
+								| laudantium facilis reprehenderit beatae dolores ipsum nesciunt alias iusto dicta eius itaque blanditiis modi velit.
+						#tab2
+							h2 Heading 2
+							p
+								| Adipisci autem obcaecati velit natus quos beatae explicabo at tempora minima voluptates deserunt eum consectetur
+								| reiciendis placeat dolorem repellat in nam asperiores impedit voluptas iure repellendus unde eveniet accusamus
+								| ex.
+						#tab3
+							h2 Heading 3
+							p
+								| Atque ratione soluta laboriosam illo inventore amet ipsum aliquam assumenda harum provident nam accusantium neque
+								| debitis obcaecati maxime officia saepe ad ducimus in quam libero vero quasi. Saepe sit nisi?
+						#tab4
+							h2 Heading 4
+							p
+								| Quidem perferendis id sapiente cumque ullam repellendus dolorum odit rerum quibusdam tempora voluptatibus ipsum.
+								| Maiores laborum velit aperiam dicta quisquam assumenda at esse exercitationem culpa sequi porro minus ipsa aut.
+						#tab5
+							h2 Heading 5
+							p
+								| Iste eligendi ratione libero impedit quos necessitatibus labore corporis deserunt quo porro hic eius delectus ea
+								| ad amet dolore officiis debitis! Libero officia magnam consequuntur dignissimos molestias quia modi repellat.
+						#tab6
+							h2 Heading 6
+							p
+								| Iste eligendi ratione libero impedit quos necessitatibus labore corporis deserunt quo porro hic eius delectus ea
+								| ad amet dolore officiis debitis! Libero officia magnam consequuntur dignissimos molestias quia modi repellat.
+						#tab7
+							h2 Heading 7
+							p
+								| Iste eligendi ratione libero impedit quos necessitatibus labore corporis deserunt quo porro hic eius delectus ea
+								| ad amet dolore officiis debitis! Libero officia magnam consequuntur dignissimos molestias quia modi repellat.
+						#tab8
+							h2 Heading 8
+
 
 block body_end
-	script(type="text/javascript" src="/js/script.js")
+	script(type="text/javascript" src="/js/home.js")

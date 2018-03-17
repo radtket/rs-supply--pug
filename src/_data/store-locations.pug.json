@@ -1,5 +1,34 @@
 {
   "title": "Pug-Sass Starter",
   "welcome": "Gulp Pug Sass Starter",
-  "link": "github.com/azemoh"
+  "slug": "/store-locations",
+  "site": {
+		"name": "R&S Supply",
+		"email": "info@randssupply.com",
+		"phone": "(555) 555-5555",
+		"socialMedia": [
+			{
+				"url": "https://www.facebook.com/RandSFresno",
+				"name": "Facebook"
+			},
+			{
+				"url": "https://www.linkedin.com/company/r&s-supply",
+				"name": "LinkedIn"
+			}
+		],
+		"nav": [
+			{
+				"name": "About",
+				"slug": "/"
+			},
+			{
+				"name": "Locations",
+				"slug": "/store-locations"
+			},
+			{
+				"name": "Credit Department",
+				"slug": "/credit"
+			}
+		]
+	}
 }

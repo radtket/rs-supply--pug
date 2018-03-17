@@ -4,10 +4,17 @@ html
     title= title
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1")
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css')
     block head_end
-	
+
   body
-    block content
-		
+    .page-wrap
+      include ../_partials/header
+
+      block content
+
+      include ../_partials/footer
+
     script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+    script(type="text/javascript" src="/js/site.js")
     block body_end

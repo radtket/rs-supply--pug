@@ -1,0 +1,108 @@
+html {
+	background-color: $viewport-background-color;
+	overflow-y: scroll;
+	-ms-overflow-style: scrollbar;
+	color: $base-font-color;
+	font-family: $base-font-family;
+	font-size: 100%;
+	line-height: $base-line-height;
+	box-sizing: border-box;
+}
+
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+}
+
+
+
+.page-wrap {
+	@include clearfix;
+	// background-color: #03192b;
+	background-color: $color-blue-d;
+	overflow: hidden;
+	position: relative;
+	&::before {
+		content: '';
+		z-index: 0;
+		background-position: top;
+		background-image: url('../img/bg/r&s-bg.png');
+		@include position(absolute, 0 0 0 0);
+		@include size(100%);
+	}
+}
+
+
+
+// Page Sections
+
+.container {
+	@include outer-container;
+}
+
+.container-full {
+  @include outer-container(100%);
+  position: relative;
+}
+
+%page-section {
+	width: 100%;
+	display: block;
+	position: relative;
+	overflow: hidden;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+	box-sizing: border-box;
+}
+
+.section-wrap {
+	@extend %page-section;
+}
+
+.page-section {
+	@extend %page-section;
+	padding: 60px 0;
+
+	@media (min-width: 480px) {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+
+	@media (min-width: 767px) {
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+
+	@media (min-width: 992px) {
+		padding-top: 140px;
+		padding-bottom: 140px;
+	}
+}
+
+.small-section {
+	@extend %page-section;
+	padding: 30px 0;
+
+	@media (min-width: 480px) {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	@media (min-width: 767px) {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}

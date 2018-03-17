@@ -1,0 +1,236 @@
+$large-screen: 53.75em !default;
+$horizontal-bar-mode: $large-screen;
+$navigation-height: 60px;
+$navigation-background: #fff;
+$navigation-color: transparentize($dark-gray, 0.3);
+$navigation-color-hover: $dark-gray;
+$top-bar--height: $navigation-height / 2;
+$logo--max-width: 108px;
+
+header.navigation {
+	background-color: $navigation-background;
+	border-bottom: 1px solid darken($navigation-background, 10);
+	min-height: $navigation-height;
+	width: 100%;
+	z-index: 999;
+
+	.navigation-wrapper {
+		@include outer-container;
+		position: relative;
+		z-index: 9999;
+	}
+
+	.navbar-header {
+		float: left;
+		position: relative;
+		line-height: 1;
+		font-size: 0;
+
+		@include media($horizontal-bar-mode) {
+			@include margin(-$base-spacing null null);
+			// Bar
+			&::before {
+				content: '';
+				background-color: $navigation-background;
+				z-index: 0;
+				@include size(6000px, $base-spacing);
+				@include position(absolute, 0 0 null null);
+			}
+
+			&::after {
+				content: '';
+				display: block;
+				@include triangle("down-left", $base-spacing, $small-spacing, $navigation-background);
+				@include position(absolute, 0 -24px null null);
+			}
+		}
+	}
+
+	.logo {
+		height: $base-spacing * 2;
+		display: inline-block;
+		@include margin(($small-spacing / 2) null ($small-spacing / 2) $base-spacing);
+
+		@include media($horizontal-bar-mode) {
+			@include margin($base-spacing null 0 null);
+		}
+
+		svg {
+			max-width: 100%;
+			max-height: 100%;
+			height: 100%;
+		}
+	}
+
+	// Mobile view
+
+	.navigation-menu-button {
+		color: $navigation-color;
+		display: block;
+		float: right;
+		line-height: $navigation-height;
+		outline: 0;
+		@include padding(null $base-spacing);
+
+		@include media($horizontal-bar-mode) {
+			display: none;
+		}
+
+		&:focus,
+		&:hover {
+			color: $navigation-color-hover;
+		}
+	}
+
+	// Nav menu
+
+	nav.navbar-nav {
+		min-height: $navigation-height;
+		z-index: 9999999;
+
+		@include media($horizontal-bar-mode) {
+			float: right;
+		}
+	}
+
+	ul.navigation-menu {
+		@include clearfix;
+		// clear: both;
+		display: none;
+		overflow: visible;
+		width: 100%;
+		z-index: 9999;
+
+		@include media($horizontal-bar-mode) {
+			display: inline;
+		}
+
+		&.show {
+			display: block;
+		}
+
+		li.nav-link {
+			background: $navigation-background;
+			line-height: $navigation-height;
+			overflow: hidden;
+			text-align: right;
+			width: 100%;
+			z-index: 9999;
+
+			&:first-of-type {
+				border-top: 1px solid darken($navigation-background, 10);
+			}
+
+			@include media($horizontal-bar-mode) {
+				display: inline;
+				background: transparent;
+				line-height: $navigation-height;
+				width: auto;
+
+				&:first-of-type {
+					border-top: 0;
+				}
+			}
+
+			a {
+				color: $navigation-color;
+				display: block;
+				font-weight: 500;
+				font-size: 14px;
+				@include padding(null $base-spacing);
+
+				@include media($horizontal-bar-mode) {
+					display: inline-block;
+					position: relative;
+
+					&::before {
+						content: '';
+						background-color: $color-red-l;
+						width: 0%;
+						height: 2px;
+						transition: all 0.35s ease-out;
+						@include position(absolute, null null -1px 0);
+					}
+
+					&:hover,
+					&.active {
+						&::before {
+							width: 100%;
+						}
+					}
+				}
+
+				&:focus,
+				&:hover {
+					color: $navigation-color-hover;
+				}
+			}
+		}
+	}
+}
+
+
+// Top Bar
+
+.top-bar {
+	height: $top-bar--height;
+	line-height: $top-bar--height;
+	font-size: $small-spacing;
+	background-color: $color-red-l;
+	position: relative;
+
+	svg {
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	a {
+		display: inline-block;
+		color: $navigation-background;
+		margin-right: $base-spacing;
+		transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1);
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__left {
+		float: left;
+		margin-left: $base-spacing;
+
+		a:hover {
+			color: $light-gray;
+		}
+
+		span {
+			svg {
+				display: inline-block;
+				height: $small-spacing;
+				margin-right: $small-spacing / 2;
+				fill: shade($color-red-l, 35);
+			}
+		}
+	}
+
+	&__right {
+		float: right;
+		margin-right: $base-spacing;
+
+		svg {
+			transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1);
+			height: $top-bar--height / 2;
+			fill: shade($color-red-l, 35);
+
+			&:hover {
+				fill: $color-white;
+			}
+		}
+	}
+
+	> .container {
+		@include media($horizontal-bar-mode) {
+			padding-left: $logo--max-width + 48px;
+		}
+	}
+}

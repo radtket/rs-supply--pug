@@ -1,0 +1,53 @@
+// Typography
+$base-font-family: $font-stack-system;
+$heading-font-family: $base-font-family;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: 1.5rem;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #e7e7e7;
+
+$color-white: #fff;
+$color-red-l: #ff7d77;
+$color-red: #d74b4b;
+// #d32f2f
+$color-red-d: #a01023;
+
+$color-blue-l: #61778b;
+$color-blue: #354b5e;
+$color-blue-d: #0a2334;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $color-red-l;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$viewport-background-color: #fff;
+
+// Box Shadow
+$box-shadow-card: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+$box-shadow-button: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+
+// Focus
+$focus-outline-color: transparentize($action-color, 0.4);
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

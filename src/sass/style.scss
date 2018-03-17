@@ -1,10 +1,20 @@
-@import "includes/base";
+@import 'base/normalize';
+@import '../../node_modules/bourbon/core/bourbon';
+@import '../../node_modules/bourbon-neat/app/assets/stylesheets/neat';
+@import 'vendor/map-box';
 
-header {
-  h1 {
-    font-weight: 300;
-    text-align: center;
-    font-size: 60px;
-    margin-top: 180px;
-  }
-}
+@import 'base/variables';
+
+@import 'base/buttons';
+@import 'base/forms';
+@import 'base/layout';
+@import 'base/lists';
+@import 'base/media';
+@import 'base/tables';
+@import 'base/typography';
+
+@import 'components/intro';
+@import 'components/tabs';
+@import 'components/navbar';
+@import 'components/footer';
+@import 'components/map';
