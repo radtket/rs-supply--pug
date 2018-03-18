@@ -132,11 +132,12 @@ header.navigation {
 				}
 			}
 
-			a {
+			> a {
 				color: $navigation-color;
 				display: block;
 				font-weight: 500;
 				font-size: 14px;
+				cursor: pointer;
 				@include padding(null $base-spacing);
 
 				@include media($horizontal-bar-mode) {
@@ -176,7 +177,7 @@ header.navigation {
 	height: $top-bar--height;
 	line-height: $top-bar--height;
 	font-size: $small-spacing;
-	background-color: $color-red-l;
+	background-color: $color-red;
 	position: relative;
 
 	svg {
@@ -208,7 +209,7 @@ header.navigation {
 				display: inline-block;
 				height: $small-spacing;
 				margin-right: $small-spacing / 2;
-				fill: shade($color-red-l, 35);
+				fill: $color-blue;
 			}
 		}
 	}
@@ -220,7 +221,7 @@ header.navigation {
 		svg {
 			transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1);
 			height: $top-bar--height / 2;
-			fill: shade($color-red-l, 35);
+			fill: $color-blue;
 
 			&:hover {
 				fill: $color-white;
@@ -231,6 +232,35 @@ header.navigation {
 	> .container {
 		@include media($horizontal-bar-mode) {
 			padding-left: $logo--max-width + 48px;
+		}
+	}
+}
+
+.sub-nav__menu {
+	overflow: hidden;
+	background-color: $light-gray;
+	margin-top: 1px;
+	line-height: $base-line-height;
+	z-index: 4;
+	position: absolute;
+	right: 0;
+	padding: $small-spacing $base-spacing;
+	display: none;
+
+	&.show-menu {
+		display: block;
+	}
+
+	li {
+		padding-bottom: 12px;
+
+		&:last-of-type {
+			padding-bottom: 0;
+		}
+
+		a {
+			position: relative;
+			z-index: 1;
 		}
 	}
 }

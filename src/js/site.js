@@ -12,9 +12,22 @@ function initMobileNav() {
 	});
 }
 
+function initDocumentsDropDown() {
+	$('.dropdown-button').click(function() {
+		const $button = $(this);
+		const $menu = $button.siblings('.sub-nav__menu');
+		$menu.toggleClass('show-menu');
+		$menu.children('li').click(function() {
+			$menu.removeClass('show-menu');
+			$button.html($(this).html());
+		});
+	});
+}
+
 $(document).ready(() => {
 	$(window).trigger('resize');
 	initMobileNav();
+	initDocumentsDropDown();
 });
 
 $(window).resize(() => {

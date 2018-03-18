@@ -16,13 +16,11 @@ $base-z-index: 0;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #e7e7e7;
-
 $color-white: #fff;
 $color-red-l: #ff7d77;
 $color-red: #d74b4b;
 // #d32f2f
 $color-red-d: #a01023;
-
 $color-blue-l: #61778b;
 $color-blue: #354b5e;
 $color-blue-d: #0a2334;
@@ -39,8 +37,8 @@ $base-border: 1px solid $base-border-color;
 $viewport-background-color: #fff;
 
 // Box Shadow
-$box-shadow-card: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
-$box-shadow-button: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+$box-shadow-card: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+$box-shadow-button: 0 3px 5px -1px rgba(0, 0, 0, .2), 0 6px 10px 0 rgba(0, 0, 0, .14), 0 1px 18px 0 rgba(0, 0, 0, .12);
 
 // Focus
 $focus-outline-color: transparentize($action-color, 0.4);

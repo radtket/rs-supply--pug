@@ -9,6 +9,7 @@
     "jquery": true
   },
   "rules": {
+    "func-names": "off",
     "computed-property-spacing": "off",
     "no-console": "off",
     "lines-around-comment": "off",

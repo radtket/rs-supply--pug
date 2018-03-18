@@ -1,5 +1,5 @@
 extends _layouts/home
-
+include ./_mixins/contactDetails.pug
 block head_end
 	link(rel="stylesheet" href="/css/style.css")
 
@@ -19,11 +19,11 @@ block content
 			aside
 				.our-info
 					.our-info__wrap
-						img(alt='', src='http://localhost:8000/static/logo_40years.66160821.png')
+						img(src='img/branding/40-years.png', alt='R&S Supply 40 Years Logo')
 					h2
 						| Over 40 Years of
 						br
-						| 					Experience
+						| Experience
 					p
 						| Helping people find the
 						br
@@ -47,76 +47,124 @@ block content
 				.tabs-wrapper
 					ul.tabs.clearfix(data-tabgroup='first-tab-group')
 						li
-							a.active(href='#tab1')
+							a.tabs-nav-item.active(href='#tab1')
 								span.city-full Arizona
 								span.city-abrv AZ
 						li
-							a(href='#tab2')
+							a.tabs-nav-item(href='#tab2')
 								span.city-full California
 								span.city-abrv CA
 						li
-							a(href='#tab3')
+							a.tabs-nav-item(href='#tab3')
 								span.city-full Idaho
 								span.city-abrv ID
 						li
-							a(href='#tab4')
+							a.tabs-nav-item(href='#tab4')
 								span.city-full Montana
 								span.city-abrv MT
 						li
-							a(href='#tab5')
+							a.tabs-nav-item(href='#tab5')
 								span.city-full Nevada
 								span.city-abrv NV
 						li
-							a(href='#tab6')
+							a.tabs-nav-item(href='#tab6')
 								span.city-full Oklahoma
 								span.city-abrv OK
 						li
-							a(href='#tab7')
+							a.tabs-nav-item(href='#tab7')
 								span.city-full Oregon
 								span.city-abrv OR
 						li
-							a(href='#tab8')
+							a.tabs-nav-item(href='#tab8')
 								span.city-full Texas
 								span.city-abrv TX
+
+						li
+							a.tabs-all-stores(href="/store-locations.html", title="title") View All Stores
+
 					section#first-tab-group.tabgroup
+
+
 						#tab1
-							h2 Heading 1
-							p
-								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla deserunt consectetur ratione id tempore laborum
-								| laudantium facilis reprehenderit beatae dolores ipsum nesciunt alias iusto dicta eius itaque blanditiis modi velit.
+							dl.accordion
+								each category in stores
+									if category.state == 'AZ'
+										dt
+											a(href='')= category.city
+										dd
+											+contactDetails(`${category.city}`, `${category.street}`, `${category.state}`, `${category.zip}`, `${category.phone}`, `${category.phoneFormated}`, `${category.fax}`, `${category.faxFormated}`)
+
+
 						#tab2
-							h2 Heading 2
-							p
-								| Adipisci autem obcaecati velit natus quos beatae explicabo at tempora minima voluptates deserunt eum consectetur
-								| reiciendis placeat dolorem repellat in nam asperiores impedit voluptas iure repellendus unde eveniet accusamus
-								| ex.
+							dl.accordion
+								each category in stores
+									if category.state == 'CA'
+										dt
+											a(href='')= category.city
+										dd
+											+contactDetails(`${category.city}`, `${category.street}`, `${category.state}`, `${category.zip}`, `${category.phone}`, `${category.phoneFormated}`, `${category.fax}`, `${category.faxFormated}`)
+
+
 						#tab3
-							h2 Heading 3
-							p
-								| Atque ratione soluta laboriosam illo inventore amet ipsum aliquam assumenda harum provident nam accusantium neque
-								| debitis obcaecati maxime officia saepe ad ducimus in quam libero vero quasi. Saepe sit nisi?
+							dl.accordion
+								each category in stores
+									if category.state == 'ID'
+										dt
+											a(href='')= category.city
+										dd
+											+contactDetails(`${category.city}`, `${category.street}`, `${category.state}`, `${category.zip}`, `${category.phone}`, `${category.phoneFormated}`, `${category.fax}`, `${category.faxFormated}`)
+
+
 						#tab4
-							h2 Heading 4
-							p
-								| Quidem perferendis id sapiente cumque ullam repellendus dolorum odit rerum quibusdam tempora voluptatibus ipsum.
-								| Maiores laborum velit aperiam dicta quisquam assumenda at esse exercitationem culpa sequi porro minus ipsa aut.
+							dl.accordion
+								each category in stores
+									if category.state == 'MT'
+										dt
+											a(href='')= category.city
+										dd
+											+contactDetails(`${category.city}`, `${category.street}`, `${category.state}`, `${category.zip}`, `${category.phone}`, `${category.phoneFormated}`, `${category.fax}`, `${category.faxFormated}`)
+
+
 						#tab5
-							h2 Heading 5
-							p
-								| Iste eligendi ratione libero impedit quos necessitatibus labore corporis deserunt quo porro hic eius delectus ea
-								| ad amet dolore officiis debitis! Libero officia magnam consequuntur dignissimos molestias quia modi repellat.
+							dl.accordion
+								each category in stores
+									if category.state == 'NV'
+										dt
+											a(href='')= category.city
+										dd
+											+contactDetails(`${category.city}`, `${category.street}`, `${category.state}`, `${category.zip}`, `${category.phone}`, `${category.phoneFormated}`, `${category.fax}`, `${category.faxFormated}`)
+
+
 						#tab6
-							h2 Heading 6
-							p
-								| Iste eligendi ratione libero impedit quos necessitatibus labore corporis deserunt quo porro hic eius delectus ea
-								| ad amet dolore officiis debitis! Libero officia magnam consequuntur dignissimos molestias quia modi repellat.
+							dl.accordion
+								each category in stores
+									if category.state == 'OK'
+										dt
+											a(href='')= category.city
+										dd
+											+contactDetails(`${category.city}`, `${category.street}`, `${category.state}`, `${category.zip}`, `${category.phone}`, `${category.phoneFormated}`, `${category.fax}`, `${category.faxFormated}`)
+
+
 						#tab7
-							h2 Heading 7
-							p
-								| Iste eligendi ratione libero impedit quos necessitatibus labore corporis deserunt quo porro hic eius delectus ea
-								| ad amet dolore officiis debitis! Libero officia magnam consequuntur dignissimos molestias quia modi repellat.
+							dl.accordion
+								each category in stores
+									if category.state == 'OR'
+										dt
+											a(href='')= category.city
+										dd
+											+contactDetails(`${category.city}`, `${category.street}`, `${category.state}`, `${category.zip}`, `${category.phone}`, `${category.phoneFormated}`, `${category.fax}`, `${category.faxFormated}`)
+
+
 						#tab8
-							h2 Heading 8
+							dl.accordion
+								each category in stores
+									if category.state == 'TX'
+										dt
+											a(href='')= category.city
+										dd
+											+contactDetails(`${category.city}`, `${category.street}`, `${category.state}`, `${category.zip}`, `${category.phone}`, `${category.phoneFormated}`, `${category.fax}`, `${category.faxFormated}`)
+
+
 
 
 block body_end

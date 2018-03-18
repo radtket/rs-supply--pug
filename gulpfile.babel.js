@@ -33,6 +33,7 @@ const paths = {
  gulp.task('copy', () => {
 	// Server config
 	gulp.src(['./src/.htaccess']).pipe(gulp.dest(paths.docs));
+	gulp.src(['./src/documents/*']).pipe(gulp.dest(`${paths.docs}documents/`));
 });
 
 /*  Optimize Images (gulp images)
@@ -56,7 +57,9 @@ gulp.task('pug', () => {
 		.pipe(data(function (file) {
 			return require(paths.data + path.basename(file.path) + '.json');
 		}))
-		.pipe(pug())
+		.pipe(pug({
+			pretty: true
+		}))
 		.on('error', function(err) {
 			process.stderr.write(`${err.message}\n`);
 			this.emit('end');
