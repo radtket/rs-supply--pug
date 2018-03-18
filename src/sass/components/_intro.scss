@@ -1,10 +1,9 @@
-.container-1400{
+.container-1400 {
 	@include outer-container(1400px);
 	@include padding(null 2%);
 }
 
 .intro-section {
-
 	&__bg {
 		@extend %page-section;
 		background-color: $color-blue;
@@ -13,38 +12,50 @@
 	}
 
 	@include outer-container(540px);
-	@media (min-width: 768px)  {max-width: 720px;}
-	@media (min-width: 992px)  {max-width: 960px;}
-	@media (min-width: 1200px) {max-width: 1170px;}
-	@media (min-width: 1400px) {max-width: 1370px;}
 
+	@media (min-width: 768px) {
+		max-width: 720px;
+	}
 
-  &__content {
-	@include outer-container;
-    padding: 70px 20px;
+	@media (min-width: 992px) {
+		max-width: 960px;
+	}
 
-    @media (min-width: 768px) {
+	@media (min-width: 1200px) {
+		max-width: 1170px;
+	}
+
+	@media (min-width: 1400px) {
+		max-width: 1370px;
+	}
+
+	&__content {
+		@include outer-container;
+		padding: 70px 20px;
+
+		@media (min-width: 768px) {
 			@include padding(95px 100px null);
-    }
+		}
 
-    @media (min-width: 1200px) {
-      padding-bottom: 90px;
-    }
+		@media (min-width: 1200px) {
+			padding-bottom: 90px;
+		}
 
-    aside {
+		aside {
 			margin-bottom: $base-spacing * 2;
-      @media (min-width: 992px) {
-        @include span-columns(5);
+
+			@media (min-width: 992px) {
+				@include span-columns(5);
 			}
 
 			@media (min-width: 1170px) {
-        @include span-columns(4);
-      }
-    }
+				@include span-columns(4);
+			}
+		}
 
-    article {
-      @media (min-width: 992px) {
-        @include span-columns(7);
+		article {
+			@media (min-width: 992px) {
+				@include span-columns(7);
 			}
 
 			@media (min-width: 1170px) {
@@ -54,69 +65,75 @@
 			p {
 				font-size: 16px;
 				line-height: 1.6;
-
 			}
-	}
+		}
 
-	.title {
-		font-size: 48px;
-		margin-bottom: $base-spacing * 1.5;
-		font-weight: 100;
-		position: relative;
-		display: inline-block;
-		padding-bottom: $small-spacing;
-		&:before {
-			content: '';
-			position: absolute;
-			top: 100%;
-			left: 0;
-			width: 30%;
-			height: 2px;
-			background-color: #ef4b4c;
+		.title {
+			font-size: 48px;
+			margin-bottom: $base-spacing * 1.5;
+			font-weight: 100;
+			position: relative;
+			display: inline-block;
+			padding-bottom: $small-spacing;
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: 100%;
+				left: 0;
+				width: 30%;
+				height: 2px;
+				background-color: #ef4b4c;
+			}
 		}
 	}
-
-  }
 }
 
 .intro-hero {
-  h2 {
+	h2 {
 		color: $color-white;
-    font-weight: 600;
+		font-weight: 600;
 		margin-bottom: 0;
 		font-size: 30px;
 		@include padding(null 2%);
-		@media(min-width: 500px) {
+
+		@media (min-width: 500px) {
 			font-size: 36px;
 		}
-		@media(min-width: 768px) {
+
+		@media (min-width: 768px) {
 			font-size: 56px;
 		}
-		@media(min-width: 992px) {
+
+		@media (min-width: 992px) {
 			font-size: 64px;
 		}
-		@media(min-width: 1170px) {
+
+		@media (min-width: 1170px) {
 			font-size: 72px;
 		}
+
 		span,
 		small {
 			color: $color-red-l;
 			font-weight: 700;
 		}
+
 		small {
 			display: block;
 			font-size: 30px;
 			line-height: 1;
 		}
-  }
+	}
 }
-
 
 .our-info {
 	text-align: center;
+
 	@media (min-width: 992px) {
 		text-align: left;
 	}
+
 	&__wrap {
 		@include size(225px);
 		position: relative;
@@ -125,15 +142,18 @@
 		border-radius: 50%;
 		text-align: center;
 		@include margin(null auto $base-spacing);
+
 		@media (min-width: 992px) {
 			@include margin(null 0 ($base-spacing * 2));
 		}
-		&:before {
-        content: '';
-        height: 100%;
-        display: inline-block;
-        vertical-align: middle;
+
+		&::before {
+			content: '';
+			height: 100%;
+			display: inline-block;
+			vertical-align: middle;
 		}
+
 		img {
 			height: auto;
 			max-width: 80%;
@@ -142,10 +162,12 @@
 			vertical-align: middle;
 		}
 	}
+
 	h2 {
 		font-size: 48px;
 		font-weight: 100;
 	}
+
 	p {
 		font-size: 20px;
 	}
@@ -155,13 +177,16 @@
 	position: relative;
 	z-index: 2;
 	margin-top: 70px * -.5;
+
 	@media (min-width: 1200px) {
 		margin-top: 90px * -.5;
 	}
+
 	> .container {
 		background-color: $color-blue-l;
 		box-shadow: $box-shadow-card;
 	}
+
 	&__content {
 		@include span-columns(10);
 		@include shift(1);

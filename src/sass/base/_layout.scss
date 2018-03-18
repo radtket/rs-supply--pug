@@ -9,7 +9,6 @@ html {
 	box-sizing: border-box;
 }
 
-
 *,
 *::before,
 *::after {
@@ -25,14 +24,13 @@ body {
 	margin: 0;
 }
 
-
-
 .page-wrap {
 	@include clearfix;
 	// background-color: #03192b;
 	background-color: $color-blue-d;
 	overflow: hidden;
 	position: relative;
+
 	&::before {
 		content: '';
 		z-index: 0;
@@ -52,8 +50,8 @@ body {
 }
 
 .container-full {
-  @include outer-container(100%);
-  position: relative;
+	@include outer-container(100%);
+	position: relative;
 }
 
 %page-section {
