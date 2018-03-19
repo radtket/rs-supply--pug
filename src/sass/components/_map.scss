@@ -109,21 +109,39 @@ $black_10: rgba(0, 0, 0, 0.1);
 }
 
 .listings {
+	@include outer-container(100%);
+	background-color: #e1e2e1;
+	padding: $small-spacing;
 	height: 100%;
 	overflow: auto;
 	padding-bottom: 60px;
 
 	.item {
+		@include row;
+		transition: all 0.3s linear;
+		background-color: $color-white;
+		border: 3px $color-white solid;
+		margin-bottom: $small-spacing;
+		cursor: pointer;
+		padding: 10px;
+		position: relative;
+		outline: transparent;
+		box-shadow: $box-shadow-card;
 		display: block;
-		border-bottom: 1px solid #e7e7e7;
-		padding: 0.5rem $small-spacing;
+		// border-bottom: 1px solid #e7e7e7;
+		// padding: 0.5rem $small-spacing;
 
 		&:last-child {
 			border-bottom: 0;
 		}
 
 		&.active {
-			background-color: #f8f8f8;
+			border-color: $color-red-l;
+
+			&:hover {
+				background-color: $color-white;
+				border-color: $color-red-l;
+			}
 
 			.title {
 				color: #b33839;
@@ -172,7 +190,6 @@ $black_10: rgba(0, 0, 0, 0.1);
 	}
 }
 
-
 ::-webkit-scrollbar {
 	border-left: 0;
 	background: rgba(0, 0, 0, 0.1);
@@ -212,8 +229,8 @@ $black_10: rgba(0, 0, 0, 0.1);
 	color: $base-font-color;
 
 	&-content {
-		padding: 0 !important;
-		border-radius: $small-spacing / 2 !important;
+		padding: 0;
+		border-radius: $small-spacing / 2;
 		font-size: 14px;
 
 		h3 {
@@ -294,7 +311,7 @@ $black_10: rgba(0, 0, 0, 0.1);
 	margin-top: 30px;
 
 	> .mapboxgl-popup-tip {
-		border-bottom-color: $color-blue-d !important;
+		border-bottom-color: $color-blue-d;
 	}
 }
 
@@ -319,4 +336,19 @@ $black_10: rgba(0, 0, 0, 0.1);
 
 .mapboxgl-container .leaflet-marker-icon {
 	cursor: pointer;
+}
+
+.store__manager {
+	display: inline-block;
+	line-height: 1.2;
+
+	dt {
+		font-size: 12px;
+		font-weight: 400;
+		text-transform: uppercase;
+	}
+
+	dd {
+		font-weight: 500;
+	}
 }

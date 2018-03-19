@@ -5,6 +5,7 @@ html
     meta(charset="utf-8")
     meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1")
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css')
+    link(href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css', rel='stylesheet')
     link(rel='stylesheet', href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.0.1/mapbox-gl-geocoder.css', type='text/css')
     // JS
     script(src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js')
@@ -17,8 +18,6 @@ html
     include ../_partials/header
 
     block content
-
-    include ../_partials/footer
 
     script(type="text/javascript" src="/js/store-picker.js")
     script(type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")

@@ -17,6 +17,26 @@ $font_0: sans-serif;
 	}
 }
 
+.tabs-nav-wrapper {
+	@media (max-width: 768px) {
+		position: relative;
+		width: 100%;
+		@include margin(null auto ($base-spacing + $small-spacing));
+	}
+}
+
+.tabs-nav-underline {
+	position: absolute;
+	bottom: 0;
+	height: 2px;
+	background: $color-red;
+	transition: all 150ms ease-in-out;
+
+	@media (min-width: 768px) {
+		display: none;
+	}
+}
+
 .tabs {
 	display: flex;
 	justify-content: space-between;
@@ -27,7 +47,22 @@ $font_0: sans-serif;
 	}
 
 	li {
-		display: inline-block;
+		@media (max-width: 767px) {
+			display: flex;
+			align-items: center;
+			min-height: 48px;
+			cursor: pointer;
+			user-select: none;
+
+
+			&:nth-child(8) {
+				margin-right: 0;
+			}
+
+			&:last-of-type {
+				display: none;
+			}
+		}
 
 		@media (min-width: 768px) {
 			display: block;
