@@ -1,0 +1,205 @@
+[
+  {
+    "category": "Steep Slope",
+    "subCategory": "Asphalt Shingles",
+    "vendorName": "CertainTeed",
+    "vendorUrl": "www.certainteed.com",
+    "vendorLogo": "CertainTeed.png"
+  },
+  {
+    "category": "Steep Slope",
+    "subCategory": "Asphalt Shingles",
+    "vendorName": "Malarkey",
+    "vendorUrl": "www.malarkeyroofing.com",
+    "vendorLogo": "Malarkey.png"
+  },
+  {
+    "category": "Steep Slope",
+    "subCategory": "Concrete & Clay Tile",
+    "vendorName": "Boral",
+    "vendorUrl": "www.boralamerica.com/roofing",
+    "vendorLogo": "Boral.png"
+  },
+  {
+    "category": "Steep Slope",
+    "subCategory": "Concrete & Clay Tile",
+    "vendorName": "Eagle Roofing Products",
+    "vendorUrl": "www.eagleroofing.com",
+    "vendorLogo": "EagleRoofingProducts.png"
+  },
+  {
+    "category": "Steep Slope",
+    "subCategory": "Metal Roofing",
+    "vendorName": "Custom-Bilt Metals",
+    "vendorUrl": "www.custombiltmetals.com",
+    "vendorLogo": "Custom-BiltMetals.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Built Up",
+    "vendorName": "CertainTeed",
+    "vendorUrl": "www.certainteed.com",
+    "vendorLogo": "CertainTeed.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Built Up",
+    "vendorName": "Johns Manville",
+    "vendorUrl": "www.jm.com",
+    "vendorLogo": "JohnsManville.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Built Up",
+    "vendorName": "Malarkey",
+    "vendorUrl": "www.malarkeyroofing.com",
+    "vendorLogo": "Malarkey.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Insulation",
+    "vendorName": "Atlas",
+    "vendorUrl": "www.atlasroofing.com",
+    "vendorLogo": "Atlas.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Insulation",
+    "vendorName": "Hunter Panels",
+    "vendorUrl": "www.hunterpanels.com",
+    "vendorLogo": "HunterPanels.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Insulation",
+    "vendorName": "Johns Manville",
+    "vendorUrl": "www.jm.com",
+    "vendorLogo": "JohnsManville.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Insulation",
+    "vendorName": "Star-R-Foam",
+    "vendorUrl": "www.starrfoam.com/",
+    "vendorLogo": "Star-R-Foam.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Mod Bit",
+    "vendorName": "CertainTeed",
+    "vendorUrl": "www.certainteed.com",
+    "vendorLogo": "CertainTeed.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Mod Bit",
+    "vendorName": "Johns Manville",
+    "vendorUrl": "www.jm.com",
+    "vendorLogo": "JohnsManville.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Mod Bit",
+    "vendorName": "Malarkey",
+    "vendorUrl": "www.malarkeyroofing.com",
+    "vendorLogo": "Malarkey.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Mod Bit",
+    "vendorName": "Polyglass USA",
+    "vendorUrl": "www.polyglass.us",
+    "vendorLogo": "PolyglassUSA.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Single Ply",
+    "vendorName": "GAF",
+    "vendorUrl": "www.gaf.com",
+    "vendorLogo": "Gaf.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Single Ply",
+    "vendorName": "Versico",
+    "vendorUrl": "www.versico.com/",
+    "vendorLogo": "Versico.png"
+  },
+  {
+    "category": "Low Slope",
+    "subCategory": "Asphalt & Pitch",
+    "vendorName": "United Asphalt",
+    "vendorUrl": "www.unitedasphalt.com",
+    "vendorLogo": "UnitedAsphalt.png"
+  },
+  {
+    "category": "Roofing Accessories",
+    "subCategory": "Cements & Coatings",
+    "vendorName": "Karnak",
+    "vendorUrl": "www.karnakcorp.com",
+    "vendorLogo": "Karnack.png"
+  },
+  {
+    "category": "Roofing Accessories",
+    "subCategory": "Cements & Coatings",
+    "vendorName": "Lucas Products",
+    "vendorUrl": "www.rmlucas.com",
+    "vendorLogo": "Lucas.png"
+  },
+  {
+    "category": "Roofing Accessories",
+    "subCategory": "Fasteners",
+    "vendorName": "Prime Source",
+    "vendorUrl": "www.primesourcebp.com/",
+    "vendorLogo": "PrimeSource.png"
+  },
+  {
+    "category": "Roofing Accessories",
+    "subCategory": "Fasteners",
+    "vendorName": "Accent",
+    "vendorUrl": "www.accentbuild.com",
+    "vendorLogo": "Accent.png"
+  },
+  {
+    "category": "Roofing Accessories",
+    "subCategory": "Felts",
+    "vendorName": "System Components",
+    "vendorUrl": "www.systemcomponents.net",
+    "vendorLogo": "SystemComponents.png"
+  },
+  {
+    "category": "Roofing Accessories",
+    "subCategory": "Metal Roof Flashings",
+    "vendorName": "Capital Sheet Metal",
+    "vendorUrl": "",
+    "vendorLogo": ""
+  },
+  {
+    "category": "Siding Products",
+    "subCategory": "Stucco & EIFS",
+    "vendorName": "Parex/LaHabra",
+    "vendorUrl": "www.parexchile.cl",
+    "vendorLogo": "Parex.png"
+  },
+  {
+    "category": "Siding Products",
+    "subCategory": "Stucco & EIFS",
+    "vendorName": "Omega",
+    "vendorUrl": "www.omega-products.com",
+    "vendorLogo": "Omega.png"
+  },
+  {
+    "category": "Siding Products",
+    "subCategory": "Housewraps",
+    "vendorName": "System Components",
+    "vendorUrl": "www.systemcomponents.net",
+    "vendorLogo": "SystemComponents.png"
+  },
+  {
+    "category": "Gutter",
+    "subCategory": "Aluminum",
+    "vendorName": "Custom-Bilt Metals",
+    "vendorUrl": "www.custombiltmetals.com",
+    "vendorLogo": ""
+  }
+]

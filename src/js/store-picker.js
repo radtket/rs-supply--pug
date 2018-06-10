@@ -32,6 +32,7 @@ const stores = {
 				coordinates: [-121.4020693, 38.5281596],
 			},
 			properties: {
+				storeManager: 'Eric Entz',
 				country: 'United States',
 				address: '5294 83rd St',
 				city: 'Sacramento',
@@ -48,6 +49,7 @@ const stores = {
 				coordinates: [-122.3864545, 40.5295995],
 			},
 			properties: {
+				storeManager: 'Alan Shufelberger',
 				country: 'United States',
 				address: '5858 Westside Rd',
 				city: 'Redding',
@@ -64,6 +66,7 @@ const stores = {
 				coordinates: [-124.1268216, 40.804262],
 			},
 			properties: {
+				storeManager: 'Nick Rice',
 				country: 'United States',
 				address: '3810 Jacobs Ave',
 				city: 'Eureka',
@@ -80,6 +83,7 @@ const stores = {
 				coordinates: [-120.6271997, 35.1187176],
 			},
 			properties: {
+				storeManager: 'Steve May',
 				country: 'United States',
 				address: '390 Manhattan Ave',
 				city: 'Grover Beach',
@@ -96,6 +100,7 @@ const stores = {
 				coordinates: [-121.7634313, 36.7665869],
 			},
 			properties: {
+				storeManager: 'John Roach',
 				country: 'United States',
 				address: '10450 Tembladera St',
 				city: 'Castroville',
@@ -112,6 +117,7 @@ const stores = {
 				coordinates: [-119.7468835, 36.7586539],
 			},
 			properties: {
+				storeManager: 'Joe Davis',
 				country: 'United States',
 				address: '1266 N Maple Ave',
 				city: 'Fresno',
@@ -128,6 +134,7 @@ const stores = {
 				coordinates: [-121.8525207, 39.8030791],
 			},
 			properties: {
+				storeManager: 'Randy Togstad',
 				country: 'United States',
 				address: '1060 Marauder St',
 				city: 'Chico',
@@ -144,6 +151,7 @@ const stores = {
 				coordinates: [-122.8569657, 42.3858899],
 			},
 			properties: {
+				storeManager: 'Luke Morey',
 				country: 'United States',
 				address: '4768 Crater Lake Ave',
 				city: 'Medford',
@@ -160,6 +168,7 @@ const stores = {
 				coordinates: [-115.1904969, 36.0873417],
 			},
 			properties: {
+				storeManager: 'Kevin Shields',
 				country: 'United States',
 				address: '5655 Procyon St',
 				city: 'Las Vegas',
@@ -176,6 +185,7 @@ const stores = {
 				coordinates: [-115.7667917, 40.8287597],
 			},
 			properties: {
+				storeManager: 'Ed Small',
 				country: 'United States',
 				address: '120 Main St',
 				city: 'Elko',
@@ -192,6 +202,7 @@ const stores = {
 				coordinates: [-116.282575, 43.5781749],
 			},
 			properties: {
+				storeManager: 'Dan Kaufman',
 				country: 'United States',
 				address: '7880 W Mossy Cup St',
 				city: 'Boise',
@@ -208,6 +219,7 @@ const stores = {
 				coordinates: [-114.4847617, 42.5502319],
 			},
 			properties: {
+				storeManager: 'Tony Haines',
 				country: 'United States',
 				address: '250 S Park Ave W',
 				city: 'Twin Falls',
@@ -224,6 +236,7 @@ const stores = {
 				coordinates: [-112.0089447, 43.5372459],
 			},
 			properties: {
+				storeManager: 'Tory Woodling',
 				country: 'United States',
 				address: '4610 N Haroldsen Dr',
 				city: 'Idaho Falls',
@@ -240,6 +253,7 @@ const stores = {
 				coordinates: [-108.553074, 45.7628232],
 			},
 			properties: {
+				storeManager: 'Joe Conner',
 				country: 'United States',
 				address: '1345 Monad Rd',
 				city: 'Billings',
@@ -256,6 +270,7 @@ const stores = {
 				coordinates: [-114.0606757, 46.9134356],
 			},
 			properties: {
+				storeManager: 'Denise Galland',
 				country: 'United States',
 				address: '4480 Expressway',
 				city: 'Missoula',
@@ -272,6 +287,7 @@ const stores = {
 				coordinates: [-111.1078329, 45.6704887],
 			},
 			properties: {
+				storeManager: 'Emily Barton',
 				country: 'United States',
 				address: '860 Winnow Cir',
 				city: 'Bozeman',
@@ -288,6 +304,7 @@ const stores = {
 				coordinates: [-111.3524731, 47.5145559],
 			},
 			properties: {
+				storeManager: 'Chad Such',
 				country: 'United States',
 				address: '2224 Vaughn Rd',
 				city: 'Great Falls',
@@ -304,6 +321,7 @@ const stores = {
 				coordinates: [-97.5749517, 35.4628613],
 			},
 			properties: {
+				storeManager: 'Clay Curtis',
 				country: 'United States',
 				address: '3200 W Reno Ave',
 				city: 'Oklahoma City',
@@ -320,6 +338,7 @@ const stores = {
 				coordinates: [-95.8915946, 36.1054053],
 			},
 			properties: {
+				storeManager: 'Scott Campbell',
 				country: 'United States',
 				address: '7727 E 41st St',
 				city: 'Tulsa',
@@ -336,22 +355,7 @@ const stores = {
 				coordinates: [-97.5749517, 35.4628613],
 			},
 			properties: {
-				country: 'United States',
-				address: '3300 Industrial Dr',
-				city: 'Wichita Falls',
-				state: 'TX',
-				postalCode: '76306',
-				phone: '(940) 767-1615',
-				fax: '(940) 716-9644',
-			},
-		},
-		{
-			type: 'Feature',
-			geometry: {
-				type: 'Point',
-				coordinates: [-98.5397927, 33.9295994],
-			},
-			properties: {
+				storeManager: 'Jody Roberts',
 				country: 'United States',
 				address: '3300 Industrial Dr',
 				city: 'Wichita Falls',
@@ -368,6 +372,7 @@ const stores = {
 				coordinates: [-97.6157785, 33.2622892],
 			},
 			properties: {
+				storeManager: 'Steve Garske',
 				country: 'United States',
 				address: '2023 US-287',
 				city: 'Decatur',
@@ -384,6 +389,7 @@ const stores = {
 				coordinates: [-114.3404627, 34.5085364],
 			},
 			properties: {
+				storeManager: 'Mike Buxton',
 				country: 'United States',
 				address: '2225 N Kiowa Blvd',
 				city: 'Lake Havasu City',
@@ -400,6 +406,7 @@ const stores = {
 				coordinates: [-114.0087177, 35.2238684],
 			},
 			properties: {
+				storeManager: 'Tony Corona',
 				country: 'United States',
 				address: '3463 Townsend St',
 				city: 'Kingman',
@@ -416,6 +423,7 @@ const stores = {
 				coordinates: [-111.5984855, 35.2138263],
 			},
 			properties: {
+				storeManager: 'Ben Allen',
 				country: 'United States',
 				address: '3585 E Industrial Dr',
 				city: 'Flagstaff',
@@ -460,6 +468,10 @@ function createPopUp(currentFeature) {
 		.addTo(map);
 }
 
+function stripPhoneNumber(number) {
+	return number.replace(/[^\d]/g, '');
+}
+
 function buildLocationList(data) {
 	for (let i = 0; i < data.features.length; i += 1) {
 		const currentFeature = data.features[i];
@@ -485,14 +497,18 @@ function buildLocationList(data) {
 			}. ${prop.city}, ${prop.state} ${prop.postalCode}</li>
 		</ul>
 		<ul style="display: inline-block">
-			<li><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.1 347.3"><path d="M340.3 274.7l-53.8-53.8c-10.7-10.6-28.4-10.3-39.5.8l-27.1 27-5.3-2.9c-17.1-9.5-40.5-22.5-65.2-47.1s-37.7-48.2-47.2-65.3c-1-1.8-1.9-3.6-2.9-5.2l18.2-18.2 8.9-8.9c11.1-11.1 11.4-28.8.7-39.5L73.4 7.8C62.7-2.9 45-2.6 33.9 8.5L18.7 23.8l.4.4a87.5 87.5 0 0 0-12.4 22 86.8 86.8 0 0 0-5.6 22.3C-6 127.4 20.9 181.2 93.9 254.1 194.7 355 276 347.4 279.5 347a90.4 90.4 0 0 0 44.4-18l.3.3 15.4-15.1c11-11.1 11.4-28.8.7-39.5z"/></svg></span>${
-				prop.phone
-			}</li>
-			<li><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.73 31.73"><path d="M0 29.66h2.537V9.571H0V29.66zM28.549 9.571V.917H15.871v8.654H10.91v20.09h20.82V9.571h-3.181zm-8.926 15.908h-2.447v-2.446h2.447v2.446zm0-4.045h-2.447V18.99h2.447v2.444zm0-3.855h-2.447v-2.446h2.447v2.446zm4.516 7.9h-2.447v-2.446h2.447v2.446zm0-4.045h-2.447V18.99h2.447v2.444zm0-3.855h-2.447v-2.446h2.447v2.446zm4.513 7.9h-2.445v-2.446h2.445v2.446zm0-4.045h-2.445V18.99h2.445v2.444zm0-3.855h-2.445v-2.446h2.445v2.446zm1.506-4.574H14.26V10.84h1.611v1.082h12.678V10.84h1.609v2.165zM3.535 30.813h6.398V7.332H3.535v23.481zm23.33-27.486h-9.029V2.48h9.029v.847zm0 2.256h-9.029v-.844h9.029v.844z"/></svg></span>${
-				prop.fax
-			}</li>
+			<li><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348.1 347.3"><path d="M340.3 274.7l-53.8-53.8c-10.7-10.6-28.4-10.3-39.5.8l-27.1 27-5.3-2.9c-17.1-9.5-40.5-22.5-65.2-47.1s-37.7-48.2-47.2-65.3c-1-1.8-1.9-3.6-2.9-5.2l18.2-18.2 8.9-8.9c11.1-11.1 11.4-28.8.7-39.5L73.4 7.8C62.7-2.9 45-2.6 33.9 8.5L18.7 23.8l.4.4a87.5 87.5 0 0 0-12.4 22 86.8 86.8 0 0 0-5.6 22.3C-6 127.4 20.9 181.2 93.9 254.1 194.7 355 276 347.4 279.5 347a90.4 90.4 0 0 0 44.4-18l.3.3 15.4-15.1c11-11.1 11.4-28.8.7-39.5z"/></svg></span>
+				<a href="tel:+1${stripPhoneNumber(prop.phone)}" rel="nofollow" name="Call R&S Supply ${prop.city} at ${prop.phone}">
+					${prop.phone}
+				</a>
+			</li>
+			<li><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.73 31.73"><path d="M0 29.66h2.537V9.571H0V29.66zM28.549 9.571V.917H15.871v8.654H10.91v20.09h20.82V9.571h-3.181zm-8.926 15.908h-2.447v-2.446h2.447v2.446zm0-4.045h-2.447V18.99h2.447v2.444zm0-3.855h-2.447v-2.446h2.447v2.446zm4.516 7.9h-2.447v-2.446h2.447v2.446zm0-4.045h-2.447V18.99h2.447v2.444zm0-3.855h-2.447v-2.446h2.447v2.446zm4.513 7.9h-2.445v-2.446h2.445v2.446zm0-4.045h-2.445V18.99h2.445v2.444zm0-3.855h-2.445v-2.446h2.445v2.446zm1.506-4.574H14.26V10.84h1.611v1.082h12.678V10.84h1.609v2.165zM3.535 30.813h6.398V7.332H3.535v23.481zm23.33-27.486h-9.029V2.48h9.029v.847zm0 2.256h-9.029v-.844h9.029v.844z"/></svg></span>
+				<a href="fax:+1${stripPhoneNumber(prop.fax)}" rel="nofollow" name="Fax R&S Supply ${prop.city} at ${prop.fax}">
+					${prop.fax}
+				</a>
+			</li>
 		</ul>
-		<dl class="store__manager"><dt>Store Manager</dt><dd>Alan Shufelberger</dd></dl>
+		<dl class="store__manager"><dt>Store Manager</dt><dd>${prop.storeManager}</dd></dl>
 
 		`;
 
