@@ -12,15 +12,17 @@ function initMobileNav() {
 	});
 }
 
+function navbarBodyOffset() {
+	const navbar = $('.navigation').height();
+	console.log(navbar);
+	$('body').css('padding-top', `${navbar}px`);
+}
+
 function initDocumentsDropDown() {
 	$('.dropdown-button').click(function() {
-		const $button = $(this);
-		const $menu = $button.siblings('.sub-nav__menu');
-		$menu.toggleClass('show-menu');
-		$menu.children('li').click(function() {
-			$menu.removeClass('show-menu');
-			$button.html($(this).html());
-		});
+		// const $button = $(this);
+		const $menu = $(this).siblings('.sub-nav__menu');
+		$menu.slideToggle();
 	});
 }
 
@@ -28,10 +30,12 @@ $(document).ready(() => {
 	$(window).trigger('resize');
 	initMobileNav();
 	initDocumentsDropDown();
+	navbarBodyOffset();
 });
 
 $(window).resize(() => {
 	console.log('====================================');
 	console.log('resize site.js');
 	console.log('====================================');
+	navbarBodyOffset();
 });

@@ -25,8 +25,6 @@ mixin contactDetails(city, street, state, zip, phone, phoneFormated, fax, faxFor
 				span(itemprop='name', style='display: none;')= `R&S Supply ${city}`
 				span(style='display: none;') Fax:
 				span(itemprop='faxNumber')
-					svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 348.165 348.165')
-						g
-							path(d='M0 60.58v11.341L174.083 193.19 348.165 71.921V60.58z')
-							path(d='M174.083 217.356L71.545 145.228 0 95.39v192.195h348.165V95.39l-71.545 49.838z')
+					svg(xmlns='http://www.w3.org/2000/svg', viewbox='0 0 31.73 31.73')
+						path(d='M0 29.66h2.537V9.571H0V29.66zM28.549 9.571V.917H15.871v8.654H10.91v20.09h20.82V9.571h-3.181zm-8.926 15.908h-2.447v-2.446h2.447v2.446zm0-4.045h-2.447V18.99h2.447v2.444zm0-3.855h-2.447v-2.446h2.447v2.446zm4.516 7.9h-2.447v-2.446h2.447v2.446zm0-4.045h-2.447V18.99h2.447v2.444zm0-3.855h-2.447v-2.446h2.447v2.446zm4.513 7.9h-2.445v-2.446h2.445v2.446zm0-4.045h-2.445V18.99h2.445v2.444zm0-3.855h-2.445v-2.446h2.445v2.446zm1.506-4.574H14.26V10.84h1.611v1.082h12.678V10.84h1.609v2.165zM3.535 30.813h6.398V7.332H3.535v23.481zm23.33-27.486h-9.029V2.48h9.029v.847zm0 2.256h-9.029v-.844h9.029v.844z')
 					a(href=`fax:+1${faxFormated}`, rel='nofollow', name=`Fax R&S Supply Redding at ${fax}`)= `${fax}`

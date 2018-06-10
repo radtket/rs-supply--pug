@@ -3,13 +3,13 @@ function initTabs() {
 	$('.tabgroup > div:first-of-type').show();
 	$('.tabs a.tabs-nav-item').click(function(e) {
 		e.preventDefault();
-		let $this = $(this),
-			tabgroup = `#${$this.parents('.tabs').data('tabgroup')}`,
-			others = $this
-				.closest('li')
-				.siblings()
-				.children('a'),
-			target = $this.attr('href');
+		const $this = $(this);
+		const tabgroup = `#${$this.parents('.tabs').data('tabgroup')}`;
+		const others = $this
+			.closest('li')
+			.siblings()
+			.children('a');
+		const target = $this.attr('href');
 		others.removeClass('active');
 		$this.addClass('active');
 		$(tabgroup)
@@ -77,12 +77,13 @@ function initTabsNav() {
 	$line.css('marginLeft', `${$defaultPaddingLeft}px`);
 
 	$navListItem.click(function() {
-		let $activeNav, $currentIndex, $currentOffset, $currentWidth, $initWidth, $marginLeftToSet, $this;
-		$this = $(this);
-		$activeNav = $('.active-nav');
-		$currentWidth = $activeNav.width();
-		$currentOffset = $activeNav.position().left;
-		$currentIndex = $activeNav.index();
+		let $initWidth;
+		let $marginLeftToSet;
+		const $this = $(this);
+		const $activeNav = $('.active-nav');
+		const $currentWidth = $activeNav.width();
+		const $currentOffset = $activeNav.position().left;
+		const $currentIndex = $activeNav.index();
 		$activeNav.removeClass('active-nav');
 		$this.addClass('active-nav');
 		if ($this.is($activeNav)) {

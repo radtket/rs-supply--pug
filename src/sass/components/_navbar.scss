@@ -13,6 +13,9 @@ header.navigation {
 	min-height: $navigation-height;
 	width: 100%;
 	z-index: 999;
+	position: fixed;
+	top: 0;
+	left: 0;
 
 	.navigation-wrapper {
 		@include outer-container;
@@ -239,13 +242,16 @@ header.navigation {
 .sub-nav__menu {
 	overflow: hidden;
 	background-color: $light-gray;
-	margin-top: 1px;
 	line-height: $base-line-height;
-	z-index: 4;
-	position: absolute;
-	right: 0;
 	padding: $small-spacing $base-spacing;
 	display: none;
+
+	@media (min-width: 860px) {
+		position: absolute;
+		right: 0;
+		z-index: 9999;
+		margin-top: 1px;
+	}
 
 	&.show-menu {
 		display: block;
