@@ -34,8 +34,5 @@ $(document).ready(() => {
 });
 
 $(window).resize(() => {
-	console.log('====================================');
-	console.log('resize site.js');
-	console.log('====================================');
 	navbarBodyOffset();
 });

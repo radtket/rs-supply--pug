@@ -94,7 +94,7 @@ gulp.task('browser-sync', ['sass', 'pug', 'js'], () => {
 		server: {
 			baseDir: paths.docs,
     },
-    	open: true,
+		open: true,
 		notify: false,
 	});
 });
@@ -107,7 +107,7 @@ gulp.task('sass', function() {
 	return gulp
 		.src(paths.sass + '*.scss')
 		.pipe(sourcemaps.init())
-		.pipe(sass())
+		.pipe(sass({outputStyle: 'compressed'}))
 		.on('error', sass.logError)
 		.pipe(
 			prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
