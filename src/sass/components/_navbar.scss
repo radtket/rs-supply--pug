@@ -2,7 +2,7 @@ $large-screen: 53.75em !default;
 $horizontal-bar-mode: $large-screen;
 $navigation-height: 60px;
 $navigation-background: #fff;
-$navigation-color: transparentize($dark-gray, 0.3);
+$navigation-color: transparentize($dark-gray, .3);
 $navigation-color-hover: $dark-gray;
 $top-bar--height: $navigation-height / 2;
 $logo--max-width: 108px;
@@ -10,12 +10,12 @@ $logo--max-width: 108px;
 header.navigation {
 	background-color: $navigation-background;
 	border-bottom: 1px solid darken($navigation-background, 10);
+	left: 0;
 	min-height: $navigation-height;
-	width: 100%;
-	z-index: 999;
 	position: fixed;
 	top: 0;
-	left: 0;
+	width: 100%;
+	z-index: 999;
 
 	.navigation-wrapper {
 		@include outer-container;
@@ -25,55 +25,55 @@ header.navigation {
 
 	.navbar-header {
 		float: left;
-		position: relative;
-		line-height: 1;
 		font-size: 0;
+		line-height: 1;
+		position: relative;
 
 		@include media($horizontal-bar-mode) {
 			@include margin(-$base-spacing null null);
 			// Bar
 			&::before {
-				content: '';
-				background-color: $navigation-background;
-				z-index: 0;
-				@include size(6000px, $base-spacing);
 				@include position(absolute, 0 0 null null);
+				@include size(6000px, $base-spacing);
+				background-color: $navigation-background;
+				content: '';
+				z-index: 0;
 			}
 
 			&::after {
+				@include position(absolute, 0 -24px null null);
+				@include triangle("down-left", $base-spacing, $small-spacing, $navigation-background);
 				content: '';
 				display: block;
-				@include triangle("down-left", $base-spacing, $small-spacing, $navigation-background);
-				@include position(absolute, 0 -24px null null);
 			}
 		}
 	}
 
 	.logo {
-		height: $base-spacing * 2;
-		display: inline-block;
 		@include margin(($small-spacing / 2) null ($small-spacing / 2) $base-spacing);
+		display: inline-block;
+		height: $base-spacing * 2;
 
 		@include media($horizontal-bar-mode) {
 			@include margin($base-spacing null 0 null);
 		}
 
 		svg {
-			max-width: 100%;
-			max-height: 100%;
 			height: 100%;
+			max-height: 100%;
+			max-width: 100%;
 		}
 	}
 
 	// Mobile view
 
 	.navigation-menu-button {
+		@include padding(null $base-spacing);
 		color: $navigation-color;
 		display: block;
 		float: right;
 		line-height: $navigation-height;
 		outline: 0;
-		@include padding(null $base-spacing);
 
 		@include media($horizontal-bar-mode) {
 			display: none;
@@ -125,8 +125,8 @@ header.navigation {
 			}
 
 			@include media($horizontal-bar-mode) {
-				display: inline;
 				background: transparent;
+				display: inline;
 				line-height: $navigation-height;
 				width: auto;
 
@@ -136,31 +136,33 @@ header.navigation {
 			}
 
 			> a {
-				color: $navigation-color;
-				display: block;
-				font-weight: 500;
-				font-size: 14px;
-				cursor: pointer;
 				@include padding(null $base-spacing);
+				color: $navigation-color;
+				cursor: pointer;
+				display: block;
+				font-size: 14px;
+				font-weight: 500;
 
 				@include media($horizontal-bar-mode) {
 					display: inline-block;
 					position: relative;
 
 					&::before {
-						content: '';
-						background-color: $color-red-l;
-						width: 0%;
-						height: 2px;
-						transition: all 0.35s ease-out;
 						@include position(absolute, null null -1px 0);
+						background-color: $color-red-l;
+						content: '';
+						height: 2px;
+						transition: all .35s ease-out;
+						width: 0%;
 					}
 
 					&:hover,
 					&.active {
+
 						&::before {
 							width: 100%;
 						}
+
 					}
 				}
 
@@ -177,22 +179,26 @@ header.navigation {
 // Top Bar
 
 .top-bar {
+	background-color: $color-red;
+	font-size: $small-spacing;
 	height: $top-bar--height;
 	line-height: $top-bar--height;
-	font-size: $small-spacing;
-	background-color: $color-red;
 	position: relative;
 
+	@media (max-width: 480px) {
+		text-align: center;
+	}
+
 	svg {
-		max-width: 100%;
 		max-height: 100%;
+		max-width: 100%;
 	}
 
 	a {
-		display: inline-block;
 		color: $navigation-background;
+		display: inline-block;
 		margin-right: $base-spacing;
-		transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1);
+		transition: all .27s cubic-bezier(.300, .100, .580, 1);
 
 		&:last-child {
 			margin-right: 0;
@@ -203,6 +209,10 @@ header.navigation {
 		float: left;
 		margin-left: $base-spacing;
 
+		@media (max-width: 480px) {
+			float: none;
+		}
+
 		a:hover {
 			color: $light-gray;
 		}
@@ -210,21 +220,26 @@ header.navigation {
 		span {
 			svg {
 				display: inline-block;
+				fill: $color-blue;
 				height: $small-spacing;
 				margin-right: $small-spacing / 2;
-				fill: $color-blue;
 			}
 		}
 	}
 
 	&__right {
+		display: block;
 		float: right;
 		margin-right: $base-spacing;
 
+		@media (max-width: 480px) {
+			display: none;
+		}
+
 		svg {
-			transition: all 0.27s cubic-bezier(0.300, 0.100, 0.580, 1);
-			height: $top-bar--height / 2;
 			fill: $color-blue;
+			height: $top-bar--height / 2;
+			transition: all .27s cubic-bezier(.300, .100, .580, 1);
 
 			&:hover {
 				fill: $color-white;
@@ -240,17 +255,17 @@ header.navigation {
 }
 
 .sub-nav__menu {
-	overflow: hidden;
 	background-color: $light-gray;
-	line-height: $base-line-height;
-	padding: $small-spacing $base-spacing;
 	display: none;
+	line-height: $base-line-height;
+	overflow: hidden;
+	padding: $small-spacing $base-spacing;
 
 	@media (min-width: 860px) {
+		margin-top: 1px;
 		position: absolute;
 		right: 0;
 		z-index: 9999;
-		margin-top: 1px;
 	}
 
 	&.show-menu {

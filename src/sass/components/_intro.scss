@@ -4,13 +4,6 @@
 }
 
 .intro-section {
-	&__bg {
-		@extend %page-section;
-		background-color: $color-blue;
-		border-top: 8px solid $color-red;
-		color: $color-white;
-	}
-
 	@include outer-container(540px);
 
 	@media (min-width: 768px) {
@@ -27,6 +20,13 @@
 
 	@media (min-width: 1400px) {
 		max-width: 1370px;
+	}
+
+	&__bg {
+		@extend %page-section;
+		background-color: $color-blue;
+		border-top: 8px solid $color-red;
+		color: $color-white;
 	}
 
 	&__content {
@@ -69,21 +69,21 @@
 		}
 
 		.title {
-			font-size: 48px;
-			margin-bottom: $base-spacing * 1.5;
-			font-weight: 100;
-			position: relative;
 			display: inline-block;
+			font-size: 48px;
+			font-weight: 100;
+			margin-bottom: $base-spacing * 1.5;
 			padding-bottom: $small-spacing;
+			position: relative;
 
 			&::before {
+				background-color: #ef4b4c;
 				content: '';
+				height: 2px;
+				left: 0;
 				position: absolute;
 				top: 100%;
-				left: 0;
 				width: 30%;
-				height: 2px;
-				background-color: #ef4b4c;
 			}
 		}
 	}
@@ -91,11 +91,11 @@
 
 .intro-hero {
 	h2 {
+		@include padding(null 2%);
 		color: $color-white;
+		font-size: 30px;
 		font-weight: 600;
 		margin-bottom: 0;
-		font-size: 30px;
-		@include padding(null 2%);
 
 		@media (min-width: 500px) {
 			font-size: 36px;
@@ -135,13 +135,13 @@
 	}
 
 	&__wrap {
+		@include margin(null auto $base-spacing);
 		@include size(225px);
-		position: relative;
 		background-color: #fff;
 		border: 1px solid #fff;
 		border-radius: 50%;
+		position: relative;
 		text-align: center;
-		@include margin(null auto $base-spacing);
 
 		@media (min-width: 992px) {
 			@include margin(null 0 ($base-spacing * 2));
@@ -149,16 +149,16 @@
 
 		&::before {
 			content: '';
-			height: 100%;
 			display: inline-block;
+			height: 100%;
 			vertical-align: middle;
 		}
 
 		img {
-			height: auto;
-			max-width: 80%;
-			margin: 0 auto;
 			display: inline-block;
+			height: auto;
+			margin: 0 auto;
+			max-width: 80%;
 			vertical-align: middle;
 		}
 	}
@@ -174,9 +174,9 @@
 }
 
 .stores-section {
+	margin-top: 70px * -.5;
 	position: relative;
 	z-index: 2;
-	margin-top: 70px * -.5;
 
 	@media (min-width: 1200px) {
 		margin-top: 90px * -.5;

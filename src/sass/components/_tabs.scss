@@ -8,9 +8,9 @@ $black_30: rgba(0, 0, 0, 0.3);
 $font_0: sans-serif;
 
 .tabs-wrapper {
-	height: 100%;
 	display: flex;
 	flex-direction: column;
+	height: 100%;
 
 	@media (min-width: 768px) {
 		flex-direction: row-reverse;
@@ -19,17 +19,17 @@ $font_0: sans-serif;
 
 .tabs-nav-wrapper {
 	@media (max-width: 768px) {
+		@include margin(null auto ($base-spacing + $small-spacing));
 		position: relative;
 		width: 100%;
-		@include margin(null auto ($base-spacing + $small-spacing));
 	}
 }
 
 .tabs-nav-underline {
-	position: absolute;
+	background: $color-red;
 	bottom: 0;
 	height: 2px;
-	background: $color-red;
+	position: absolute;
 	transition: all 150ms ease-in-out;
 
 	@media (min-width: 768px) {
@@ -48,10 +48,10 @@ $font_0: sans-serif;
 
 	li {
 		@media (max-width: 767px) {
-			display: flex;
 			align-items: center;
-			min-height: 48px;
 			cursor: pointer;
+			display: flex;
+			min-height: 48px;
 			user-select: none;
 
 
@@ -71,11 +71,11 @@ $font_0: sans-serif;
 
 	a.tabs-nav-item {
 		color: $color-white;
-		position: relative;
-		display: inline-block;
-		font-weight: 600;
-		font-size: 26px;
 		cursor: pointer;
+		display: inline-block;
+		font-size: 26px;
+		font-weight: 600;
+		position: relative;
 		transition: all 0.4s ease-in-out;
 
 		@media (max-width: 400px) {
@@ -89,22 +89,22 @@ $font_0: sans-serif;
 		}
 
 		@media (min-width: 768px) {
-			text-align: right;
 			margin-bottom: 15px;
+			text-align: right;
 			width: 100%;
 
 			&::before {
-				content: '';
-				position: absolute;
-				top: 50%;
-				right: 0;
-				width: 30px;
-				height: 2px;
-				transform: translateY(-50%);
-				opacity: 0;
-				visibility: hidden;
 				background-color: $color-white;
+				content: '';
+				height: 2px;
 				margin-top: 2px;
+				opacity: 0;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				visibility: hidden;
+				width: 30px;
 			}
 
 			.city-abrv {
@@ -125,9 +125,9 @@ $font_0: sans-serif;
 				padding-right: 40px;
 
 				&::before {
+					background-color: $color-red-l;
 					opacity: 1;
 					visibility: visible;
-					background-color: $color-red-l;
 				}
 			}
 		}
@@ -140,18 +140,18 @@ $font_0: sans-serif;
 }
 
 .clearfix::after {
+	clear: both;
 	content: '';
 	display: table;
-	clear: both;
 }
 
 .tabs-all-stores {
 	display: none;
 
 	@media (min-width: 768px) {
-		text-align: right;
-		margin-bottom: 15px;
-		width: 100%;
 		display: inline-block;
+		margin-bottom: 15px;
+		text-align: right;
+		width: 100%;
 	}
 }

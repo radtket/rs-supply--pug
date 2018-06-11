@@ -6,23 +6,23 @@
 
 	> dt {
 		> a {
-			display: block;
-			position: relative;
-			color: $color_blue-l;
-			text-decoration: none;
-			padding: $small-spacing $base-spacing;
 			background-color: $color-white;
 			border-bottom: 1px solid rgba(#000, .2);
+			color: $color_blue-l;
+			display: block;
+			padding: $small-spacing $base-spacing;
+			position: relative;
+			text-decoration: none;
 			transition: all 0.27s cubic-bezier(0, 0, .580, 1);
 
 			&::after {
-				content: '+';
-				font-size: 18px;
 				color: $color_blue-l;
-				transition: transform .5s ease-in-out;
+				content: '+';
+				font-family: monospace;
+				font-size: 18px;
 				position: absolute;
 				right: 30px;
-				font-family: monospace;
+				transition: transform .5s ease-in-out;
 			}
 
 			&:hover {
@@ -35,9 +35,9 @@
 			}
 
 			&.active {
-				color: $color-white;
-				border-color: $color-red-d;
 				background-color: $color-red;
+				border-color: $color-red-d;
+				color: $color-white;
 				cursor: default;
 				display: block;
 
@@ -53,17 +53,17 @@
 	> dd {
 		background-color: $light-gray;
 		border-bottom: 1px solid rgba(#000, .2);
-		padding: $small-spacing $base-spacing $base-spacing;
 		display: flex;
 		justify-content: space-between;
+		padding: $small-spacing $base-spacing $base-spacing;
 
 		svg {
 			display: inline-block;
-			margin-right: 4px;
 			fill: #0a2334;
 			height: 14px;
-			max-width: 100%;
+			margin-right: 4px;
 			max-height: 100%;
+			max-width: 100%;
 		}
 	}
 }
