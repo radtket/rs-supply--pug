@@ -120,9 +120,3 @@ $(document).ready(() => {
 	initTabs();
 	initTabsNav();
 });
-
-$(window).resize(() => {
-	console.log('====================================');
-	console.log('resize home.js');
-	console.log('====================================');
-});

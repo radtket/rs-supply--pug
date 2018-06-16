@@ -14,7 +14,6 @@ function initMobileNav() {
 
 function navbarBodyOffset() {
 	const navbar = $('.navigation').height();
-	console.log(navbar);
 	$('body').css('padding-top', `${navbar}px`);
 }
 

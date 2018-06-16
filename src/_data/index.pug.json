@@ -1,6 +1,5 @@
 {
-  "title": "Pug-Sass Starter",
-  "welcome": "Gulp Pug Sass Starter",
+  "title": "R&S Supply",
   "slug": "/",
   "site": {
 		"name": "R&S Supply",
@@ -431,6 +430,22 @@
 			"faxFormated": 9406271765,
 			"latitude": 33.2622892,
 			"longitude": -97.6157785
+		},
+		{
+			"storeNumber": 26,
+			"storeOpened": 2017,
+			"storeManager": "Lisa Alvarez-Manager",
+			"street": "1746 Mineral King Ave",
+			"city": "Visalia",
+			"stateFull": "California",
+			"state": "CA",
+			"zip": 93290,
+			"phone": "(559) 623-9337",
+			"phoneFormated": 5596239337,
+			"fax": "(559) 623-9597",
+			"faxFormated": 5596239597,
+			"latitude": 36.328297,
+			"longitude": -119.2752247
 		}
 	]
 }

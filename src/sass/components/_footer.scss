@@ -1,25 +1,25 @@
 .footer {
 	border-bottom: $small-spacing solid $color-red;
-	text-align: center;
-	position: relative;
 	overflow: hidden;
+	position: relative;
+	text-align: center;
 
 	> svg {
-		margin-top: 70px;
 		fill: $color-blue;
+		margin-top: 70px;
 	}
 
 	.small-section {
-		padding-top: 0;
 		background-color: $color-blue;
+		padding-top: 0;
 	}
 
 	figure {
 		height: 70px;
 
 		svg {
-			max-width: 100%;
 			max-height: 100%;
+			max-width: 100%;
 		}
 	}
 
@@ -33,10 +33,10 @@
 		@include padding($base-spacing null $small-spacing);
 
 		a {
+			color: $color-white;
+			display: inline-block;
 			font-size: 14px;
 			font-weight: 500;
-			display: inline-block;
-			color: $color-white;
 			margin-right: $base-spacing;
 
 			&:last-child {

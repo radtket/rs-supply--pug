@@ -1,4 +1,5 @@
 {
+  "title": "R&S Supply",
 	"site": {
 		"name": "R&S Supply",
 		"email": "info@randssupply.com",
@@ -601,6 +602,29 @@
 			"price": 703280,
 			"bedrooms": 1,
 			"bathrooms": 3,
+			"carSpaces": 2,
+			"picture": "https://i.imgur.com/4eRj4Dn.jpg"
+		},
+		{
+			"index": 25,
+			"_id": 5302411615,
+			"storeNumber": 1,
+			"storeOpened": 1977,
+			"storeManager": "Lisa Alvarez-Manager",
+			"street": "1746 Mineral King Ave",
+			"city": "Visalia",
+			"stateFull": "California",
+			"state": "CA",
+			"zip": 93290,
+			"phone": "(559) 623-9337",
+			"phoneFormated": 5596239337,
+			"fax": "(559) 623-9597",
+			"faxFormated": 5596239597,
+			"latitude": 36.328297,
+			"longitude": -119.2752247,
+			"price": 937180,
+			"bedrooms": 1,
+			"bathrooms": 1,
 			"carSpaces": 2,
 			"picture": "https://i.imgur.com/4eRj4Dn.jpg"
 		}

@@ -19,7 +19,7 @@ const map = new mapboxgl.Map({
 	// initial position in [long, lat] format
 	center: [-112.0089, 43.5372],
 	// initial zoom
-	zoom: 13,
+	zoom: 1,
 });
 
 const stores = {
@@ -131,6 +131,23 @@ const stores = {
 			type: 'Feature',
 			geometry: {
 				type: 'Point',
+				coordinates: [-119.2752247, 36.328297],
+			},
+			properties: {
+				storeManager: 'Lisa Alvarez-Manager',
+				country: 'United States',
+				address: '1746 Mineral King Ave',
+				city: 'Visalia',
+				state: 'CA',
+				postalCode: '93703',
+				phone: '(559) 623-9337',
+				fax: '(559) 623-9597',
+			},
+		},
+		{
+			type: 'Feature',
+			geometry: {
+				type: 'Point',
 				coordinates: [-121.8525207, 39.8030791],
 			},
 			properties: {
@@ -193,6 +210,23 @@ const stores = {
 				postalCode: '89801',
 				phone: '(775) 738-1615',
 				fax: '(775) 738-1636',
+			},
+		},
+		{
+			type: 'Feature',
+			geometry: {
+				type: 'Point',
+				coordinates: [-119.8118087, 39.5498231],
+			},
+			properties: {
+				storeManager: 'Chris Ponto',
+				country: 'United States',
+				address: '2395 Valley Rd',
+				city: 'Reno',
+				state: 'NV',
+				postalCode: '89512',
+				phone: '(775) 323-0888',
+				fax: '(775) 323-6310',
 			},
 		},
 		{
@@ -352,7 +386,7 @@ const stores = {
 			type: 'Feature',
 			geometry: {
 				type: 'Point',
-				coordinates: [-97.5749517, 35.4628613],
+				coordinates: [-98.5397927, 33.9295994],
 			},
 			properties: {
 				storeManager: 'Jody Roberts',
@@ -369,7 +403,7 @@ const stores = {
 			type: 'Feature',
 			geometry: {
 				type: 'Point',
-				coordinates: [-97.6157785, 33.2622892],
+				coordinates: [-97.6178626, 33.2665419],
 			},
 			properties: {
 				storeManager: 'Steve Garske',
@@ -439,7 +473,7 @@ const stores = {
 function flyToStore(currentFeature) {
 	map.flyTo({
 		center: currentFeature.geometry.coordinates,
-		zoom: 15,
+		zoom: map.getZoom(),
 	});
 }
 
@@ -582,6 +616,7 @@ map.on('load', () => {
 		const options = {
 			units: 'miles',
 		};
+
 		stores.features.forEach(store => {
 			Object.defineProperty(store.properties, 'distance', {
 				value: turf.distance(searchResult, store.geometry, options),
@@ -669,6 +704,7 @@ stores.features.forEach((marker, i) => {
 			right: 24,
 		},
 	});
+
 	el.addEventListener('click', e => {
 		// 1. Fly to the point
 		flyToStore(marker);
