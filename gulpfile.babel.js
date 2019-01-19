@@ -1,145 +1,176 @@
-/* eslint-disable */
-import babel from 'gulp-babel';
-import browserSync from 'browser-sync';
-import data from 'gulp-data';
-import del from 'del';
-import gulp from 'gulp';
-import imagemin from 'gulp-imagemin';
-import path from 'path';
-import prefix from 'gulp-autoprefixer';
-import pug from 'gulp-pug';
-import sass from 'gulp-sass';
-import sourcemaps from 'gulp-sourcemaps';
-import svgo from 'gulp-svgo';
-import uglify from 'gulp-uglify';
+import gulp from "gulp";
+import autoprefixer from "autoprefixer";
+import browsersync from "browser-sync";
+import cssnano from "cssnano";
+import data from "gulp-data";
+import del from "del";
+import eslint from "gulp-eslint";
+import htmlmin from "gulp-htmlmin";
+import imagemin from "gulp-imagemin";
+import newer from "gulp-newer";
+import path from "path";
+import plumber from "gulp-plumber";
+import postcss from "gulp-postcss";
+import pugCompile from "gulp-pug";
+import rename from "gulp-rename";
+import sass from "gulp-sass";
+import sassGlob from "gulp-sass-glob";
+import sourcemaps from "gulp-sourcemaps";
+// import webpack from "webpack";
+// import webpackstream from "webpack-stream";
+// import webpackconfig from "./webpack.config";
+// import babel from "gulp-babel";
 
-/*
- * Directories here
- */
-const paths = {
-	docs: './docs/',
-	sass: './src/sass/',
-	css: './docs/css/',
-	js: './docs/js/',
-	data: './src/_data/',
-};
+browsersync.create();
 
+// project
+const project = { root: __dirname };
+project.dist = `${project.root}/docs`;
 
-/*  Clean the /dist directory (gulp clean)
-  ************************* */
- gulp.task('clean', () => del([paths.docs]));
+project.assets = `${project.root}/src`;
+project.data = `${project.assets}/_data/`;
+project.documents = `${project.assets}/documents`;
+project.favicon = `${project.assets}/favicon`;
+project.img = `${project.assets}/img`;
+project.js = `${project.assets}/js`;
+project.pug = `${project.assets}/html`;
+project.scss = `${project.assets}/scss`;
+project.video = `${project.assets}/video`;
 
-
- gulp.task('copy', () => {
-	// Server config
-	gulp.src(['./src/.htaccess']).pipe(gulp.dest(paths.docs));
-	gulp.src(['./src/documents/*']).pipe(gulp.dest(`${paths.docs}documents/`));
-});
-
-/*  Optimize Images (gulp images)
-  - Optimizes images and outputs to dist directory
-  ************************* */
- gulp.task('images', () =>
- gulp
-	 .src('./src/img/**/*')
-	 .pipe(svgo())
-	 .pipe(imagemin())
-	 .pipe(gulp.dest('docs/img'))
-);
-
-/**
- * Compile .pug files and pass in data from json file
- * matching file name. index.pug - index.pug.json
- */
-gulp.task('pug', () => {
-	return gulp
-		.src('./src/*.pug')
-		.pipe(data(function (file) {
-			return require(paths.data + path.basename(file.path) + '.json');
-		}))
-		.pipe(pug({
-			pretty: true
-		}))
-		.on('error', function(err) {
-			process.stderr.write(`${err.message}\n`);
-			this.emit('end');
-		})
-		.pipe(gulp.dest(paths.docs));
-});
-
-gulp.task('js', () =>
-	gulp
-		.src('./src/js/**/*.js')
-		.pipe(
-			babel({
-				presets: ['@babel/env'],
-			})
-		)
-		.pipe(uglify())
-		.pipe(gulp.dest(paths.js))
-);
-
-/**
- * Recompile .pug files and live reload the browser
- */
-gulp.task('rebuild', ['pug'], () => {
-	browserSync.reload();
-});
-
-/**
- * Wait for pug and sass tasks, then launch the browser-sync Server
- */
-gulp.task('browser-sync', ['sass', 'pug', 'js'], () => {
-	browserSync({
+// BrowserSync
+function browserSync(done) {
+	browsersync.init({
 		server: {
-			baseDir: paths.docs,
-    },
-		open: true,
-		notify: false,
+			baseDir: `${project.dist}/`
+		},
+		port: 3000
 	});
-});
+	done();
+}
 
-/**
- * Compile .scss files into docs css directory With autoprefixer no
- * need for vendor prefixes then live reload the browser.
- */
-gulp.task('sass', function() {
+// BrowserSync Reload
+function browserSyncReload(done) {
+	browsersync.reload();
+	done();
+}
+
+// Clean assets
+function clean() {
+	return del([`${project.dist}`]);
+}
+
+// Copy Favicon Assets
+function favicon() {
+	return gulp.src(`${project.favicon}/**/*`).pipe(gulp.dest(`${project.dist}`));
+}
+
+// Copy Document Assets
+function documents() {
 	return gulp
-		.src(paths.sass + '*.scss')
-		.pipe(sourcemaps.init())
-		.pipe(sass({outputStyle: 'compressed'}))
-		.on('error', sass.logError)
+		.src(`${project.documents}/**/*`)
+		.pipe(gulp.dest(`${project.dist}/documents/`));
+}
+
+// Copy Pug Assets
+function pug() {
+	return gulp
+		.src(`${project.assets}/*.pug`)
 		.pipe(
-			prefix(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], {
-				cascade: true,
+			data(file => require(`${project.data + path.basename(file.path)}.json`))
+		)
+		.pipe(
+			pugCompile({
+				pretty: true
 			})
 		)
-		.pipe(sourcemaps.write('./'))
-		.pipe(gulp.dest(paths.css))
+		.on("error", function(err) {
+			process.stderr.write(`${err.message}\n`);
+			this.emit("end");
+		})
+		.pipe(gulp.dest(`${project.pug}`))
+		.pipe(htmlmin({ collapseWhitespace: true }))
+		.pipe(gulp.dest(`${project.dist}`));
+}
+
+// Optimize Images
+function images() {
+	return gulp
+		.src(`${project.img}/**/*`)
+		.pipe(newer(`${project.dist}/img/`))
 		.pipe(
-			browserSync.reload({
-				stream: true,
-			})
-		);
-});
+			imagemin([
+				imagemin.gifsicle({ interlaced: true }),
+				imagemin.jpegtran({ progressive: true }),
+				imagemin.optipng({ optimizationLevel: 5 }),
+				imagemin.svgo({
+					plugins: [
+						{
+							removeViewBox: false,
+							collapseGroups: true
+						}
+					]
+				})
+			])
+		)
+		.pipe(gulp.dest(`${project.dist}/img/`));
+}
 
-/**
- * Watch scss files for changes & recompile
- * Watch .pug files run pug-rebuild then reload BrowserSync
- */
-gulp.task('watch', function() {
-	gulp.watch(paths.sass + '**/*.scss', ['sass']);
-	gulp.watch('./src/**/*.pug', ['rebuild']);
-	gulp.watch('src/js/**/*.js', ['js']);
-	gulp.watch('src/img/**/*', ['images']);
-});
+// CSS task
+function css() {
+	return gulp
+		.src(`${project.scss}/**/*.scss`)
+		.pipe(plumber())
+		.pipe(sourcemaps.init())
+		.pipe(sassGlob())
+		.pipe(sass({ outputStyle: "expanded" }))
+		.pipe(gulp.dest(`${project.dist}/css/`))
+		.pipe(rename({ suffix: ".min" }))
+		.pipe(postcss([autoprefixer(), cssnano()]))
+		.pipe(gulp.dest(`${project.dist}/css/`))
+		.pipe(browsersync.stream());
+}
 
-// Build task compile sass and pug.
-gulp.task('build', ['clean', 'copy', 'sass', 'pug', 'js', 'images']);
+// Lint scripts
+function scriptsLint() {
+	return gulp
+		.src([`${project.js}/**/*`, "./gulpfile.babel.js"])
+		.pipe(plumber())
+		.pipe(eslint())
+		.pipe(eslint.format());
+	// .pipe(eslint.failAfterError());
+}
 
-/**
- * Default task, running just `gulp` will compile the sass,
- * compile the jekyll site, launch BrowserSync then watch
- * files for changes
- */
-gulp.task('default', ['browser-sync', 'watch']);
+// Transpile, concatenate and minify scripts
+function scripts() {
+	return (
+		gulp
+			.src([`${project.js}/**/*`])
+			// .pipe(babel())
+			// .pipe(plumber())
+			// .pipe(webpackstream(webpackconfig, webpack))
+			// folder only, filename is specified in webpack config
+			.pipe(gulp.dest(`${project.dist}/js/`))
+			.pipe(browsersync.stream())
+	);
+}
+
+// Watch files
+function watchFiles() {
+	gulp.watch(`${project.assets}/*.pug`, gulp.series(browserSyncReload, pug));
+	gulp.watch(`${project.scss}/**/*`, css);
+	gulp.watch(`${project.js}/**/*`, gulp.series(scriptsLint, scripts));
+	gulp.watch(`${project.img}/**/*`, images);
+}
+
+// define complex tasks
+const js = gulp.series(scriptsLint, scripts);
+const build = gulp.series(
+	clean,
+	gulp.parallel(css, documents, favicon, images, js, pug)
+);
+const watch = gulp.parallel(watchFiles, browserSync);
+
+// export tasks
+export { images, documents, favicon, pug, css, js, clean, build, watch };
+
+export default build;
