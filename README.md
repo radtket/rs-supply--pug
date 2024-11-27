@@ -1,8 +1,8 @@
 # R&S Supply - 2018
+A comprehensive site for R&S Supply, a leading provider of wholesale building materials and roofing supplies. The site showcases their extensive service to contractors, offering information about store locations, services, and their history of customer service excellence. It also includes resources like credit applications and job reports, making it a helpful tool for both current and prospective clients in the construction industry.
 
-A client website for R&S Supply
-
-**Live demo:** [https://radtket.github.io/rs-supply--pug/](https://radtket.github.io/rs-supply--pug/)
+**GitHub Repository:** [radtket/rs-supply--pug](https://github.com/radtket/rs-supply--pug)  
+**Live Demo:** [R&S Supply](https://radtket.github.io/rs-supply--pug/)
 
 ## Getting started
 
